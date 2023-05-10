@@ -15,7 +15,6 @@ import Logo from "./logo.png";
 import { deleteCartItem } from "../../../redux/actions";
 import { useSelector, useDispatch } from "react-redux";
 
-
 const Navbar = () => {
   const state = useSelector((state) => state.handleCart);
   const dispatch = useDispatch();
@@ -24,9 +23,7 @@ const Navbar = () => {
     dispatch(deleteCartItem(Item));
   };
 
-  
   const [showNavbar, setShowNavbar] = useState(false);
-  
 
   const navigate = useNavigate();
   // const gotoBlog = () => {
@@ -50,7 +47,6 @@ const Navbar = () => {
   const gotoCheckout = () => {
     navigate("/checkout");
   };
-
 
   let total = 0;
   let totalCards = 0;
@@ -84,46 +80,29 @@ const Navbar = () => {
         }`}
       >
         <div className="">
-          <div className="flex  top-0  justify-between py- border-b bg-white sm:px-4 dark:bg-gray-900  w-full border-gray-200 dark:border-gray-600">
+          <div className="flex  top-0  justify-between py- border-b bg-white sm:px-4  w-full border-gray-200 dark:border-gray-600">
             <div className="flex flex-wrap items-center justify-between mx-auto container ">
-              <a
-               
-                className="flex h-10 -mx-16 cursor-pointer"
-              >
+              <a className="flex h-10 -mx-16 cursor-pointer ml-10">
                 <img src={Logo} alt="Logo" />
               </a>
 
               <div className="flex  ml-12 items-center justify-between">
                 <ul className="flex">
                   <li className="flex flex-row items-center space-x-6 text-md text-gray-700 ">
-                    <a
-                      className="flex  items-center hover:text-red-800  pb-8 mt-8 cursor-pointer"
-                    >
+                    <a className="flex  items-center hover:text-red-800  pb-8 mt-8 cursor-pointer">
                       Shop
-                      
-                      
                     </a>
 
-                    <a
-                     
-                      className="flex items-center hover:text-red-800 pb-8 mt-8 cursor-pointer"
-                    >
+                    <a className="flex items-center hover:text-red-800 pb-8 mt-8 cursor-pointer">
                       Categories
-                      
                     </a>
 
-                    <a
-                      className="flex items-center hover:text-red-800 pb-8 mt-8 cursor-pointer"
-                    >
+                    <a className="flex items-center hover:text-red-800 pb-8 mt-8 cursor-pointer">
                       Men
-                      
                     </a>
 
-                    <a
-                      className="flex items-center  hover:text-red-800 pb-8 mt-8 cursor-pointer"
-                    >
+                    <a className="flex items-center  hover:text-red-800 pb-8 mt-8 cursor-pointer">
                       Women
-                      
                     </a>
 
                     <a
@@ -134,7 +113,6 @@ const Navbar = () => {
                     </a>
                     <a
                       href="#"
-                      
                       className="flex items-center hover:text-red-800"
                     >
                       Blog
@@ -152,23 +130,15 @@ const Navbar = () => {
                 <ul className="flex flex-row space-x-7">
                   {/* ok */}
                   <li className="flex space-x-5 text-xl">
-                    <a
-                    
-                    >
+                    <a>
                       <AiOutlineSearch />
                     </a>
 
-                    <a
-                     
-                      className="Accounts hover:text-red-800 text-2xl"
-                    >
+                    <a className="Accounts hover:text-red-800 text-2xl">
                       <BsPerson />
                     </a>
 
-                    <a
-                      
-                      className="Like hover:text-red-800 text-2xl"
-                    >
+                    <a className="Like hover:text-red-800 text-2xl">
                       <AiOutlineHeart />
                     </a>
 
@@ -222,25 +192,29 @@ const Navbar = () => {
                               className="flex items-center w-52 h-28 mb-2 mx-8 border-gray-200"
                             >
                               <div className="flex justify-between">
-                              <img
-                                className="h-28 cursor-pointer"
-                                src={item.image}
-                                alt={item.name}
-                              />
-                              <div className="  ml-1 w-48  pt-5  flex  flex-col  items-center ">
+                                <img
+                                  className="h-28 cursor-pointer"
+                                  src={item.image}
+                                  alt={item.name}
+                                />
+                                <div className="  ml-1 w-48  pt-5  flex  flex-col  items-center ">
                                   <p className=" text-1xl font-medium pl-2  text-stone-700 cursor-pointer hover:text-red-600 duration-500">
                                     {item.name}
-                                     
+
                                     {/* {item.qty} <span className="">X</span> {" "}<span className=" text-xl text-black"> ${item.price}</span> */}
                                   </p>
-                                  
+
                                   <p className="text-xl mt-2 pl-2 text-gray-400">
-                                    {item.qty} <span className="">X</span> {" "}<span className=" text-xl text-black"> ${item.price}</span>
+                                    {item.qty} <span className="">X</span>{" "}
+                                    <span className=" text-xl text-black">
+                                      {" "}
+                                      ${item.price}
+                                    </span>
                                   </p>
                                   {/* <p className="pl-2 text-xl font-bold text-black">
                                     ${item.price}
                                   </p> */}
-                                
+
                                   {/* <button
                                     className="w-8 h-8 text-gray-400 hover:text-red-600"
                                     onClick={() => removeCard(item.id)}
@@ -248,16 +222,14 @@ const Navbar = () => {
                                     <IoCloseCircleOutline className="w-5 h-5" />
                                   </button> */}
                                 </div>
-
-
                               </div>
                               <div className="pl-24 justify-between h-full ">
-                              <button
-                                    className="w-8 h-8 pt-6 text-gray-400 hover:text-red-600"
-                                    onClick={() => removeCard(item.id)}
-                                  >
-                                    <IoCloseCircleOutline className="w-5 h-5" />
-                                  </button>
+                                <button
+                                  className="w-8 h-8 pt-6 text-gray-400 hover:text-red-600"
+                                  onClick={() => removeCard(item.id)}
+                                >
+                                  <IoCloseCircleOutline className="w-5 h-5" />
+                                </button>
                                 {/* <div className="flex ">
                                   <p className="text-xl text-gray-400">
                                     {item.qty} X
@@ -275,7 +247,7 @@ const Navbar = () => {
                           <p className="text-sm text-gray-400">Subtotal</p>
                           <p className="font-semibold">${Math.round(total)}</p>
                         </div>
-                        
+
                         <div className="mt-3">
                           <button
                             className="bg-slate-900 text-white font-bold w-full h-10"
@@ -297,7 +269,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      
     </>
   );
 };
